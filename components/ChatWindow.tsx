@@ -22,7 +22,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({ messages, isLoading, mod
   }, [messages, isLoading]);
 
   return (
-    <div className="flex-1 p-6 overflow-y-auto">
+    <div className="flex-1 p-6 overflow-y-auto animate-fade-in">
       <div className="max-w-4xl mx-auto space-y-6">
         {messages.map((msg, index) => (
           <MessageBubble key={index} message={msg} />

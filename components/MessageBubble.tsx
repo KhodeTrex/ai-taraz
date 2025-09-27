@@ -41,23 +41,3 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
     </div>
   );
 };
-
-// Add keyframes for animation in tailwind config if possible, or use a style tag for simplicity here.
-// Since we can't edit tailwind.config.js, let's inject it via a style element.
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.animate-fade-in-up {
-  animation: fade-in-up 0.5s ease-out;
-}
-`;
-document.head.appendChild(style);

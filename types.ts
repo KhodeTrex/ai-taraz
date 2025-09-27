@@ -10,3 +10,10 @@ export interface Message {
   role: 'user' | 'model';
   text: string;
 }
+
+export interface Conversation {
+  id: string;
+  title: string;
+  model: AIModel;
+  messages: Message[];
+}
