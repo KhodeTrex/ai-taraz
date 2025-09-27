@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Content } from "@google/genai";
 import { AIModel } from '../types';
 
@@ -9,7 +8,7 @@ import { AIModel } from '../types';
 // شدیداً توصیه می‌شود که از متغیرهای محیطی (Environment Variables) استفاده کنید.
 //
 // کلید شما در اینجا قرار داده شد.
-const API_KEY = "AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ";
+const API_KEY = "AIzaSyAseDqoKgzH0SqLDhWtWFLEn8WojbVXhF4";
 // ######################################################################
 
 
