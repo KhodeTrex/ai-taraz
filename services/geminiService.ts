@@ -8,7 +8,7 @@ import { AIModel } from '../types';
 // این کلید در کد نهایی برنامه شما برای کاربران قابل مشاهده خواهد بود.
 // شدیداً توصیه می‌شود که از متغیرهای محیطی (Environment Variables) استفاده کنید.
 //
-// کلید خود را در اینجا جایگزین "AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ" کنید.
+// کلید شما در اینجا قرار داده شد.
 const API_KEY = "AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ";
 // ######################################################################
 
@@ -16,10 +16,10 @@ const API_KEY = "AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ";
 let ai: GoogleGenAI | null = null;
 // تلاش برای مقداردهی اولیه سرویس هوش مصنوعی با کلید وارد شده در کد
 try {
-    if (API_KEY && API_KEY !== "AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ") {
+    if (API_KEY) {
         ai = new GoogleGenAI({ apiKey: API_KEY });
     } else {
-        console.warn("کلید API در کد تنظیم نشده است. لطفاً مقدار 'AIzaSyB6X-OpEp5ixlV_D88YnKylZA6xP1bfuJQ' را در services/geminiService.ts جایگزین کنید.");
+        console.warn("کلید API در کد تنظیم نشده است.");
     }
 } catch (e) {
     console.warn("خطا در مقداردهی اولیه GoogleGenAI. آیا کلید API معتبر است؟", e);
