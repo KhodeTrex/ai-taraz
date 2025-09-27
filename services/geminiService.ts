@@ -2,11 +2,10 @@
 import { GoogleGenAI, Content } from "@google/genai";
 import { AIModel } from '../types';
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
+let ai: GoogleGenAI | null = null;
+if (process.env.API_KEY) {
+  ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 }
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const modelPersonas: Record<AIModel, string> = {
   [AIModel.Gemini]: 'You are a helpful and versatile AI assistant, similar to ChatGPT. Provide clear, concise, and informative answers. Your language should be polite and professional. You are speaking Farsi.',
@@ -16,6 +15,10 @@ const modelPersonas: Record<AIModel, string> = {
 };
 
 export const generateResponse = async (history: Content[], model: AIModel): Promise<string> => {
+  if (!ai) {
+    return "کلید API یافت نشد. لطفاً مطمئن شوید که متغیر محیطی API_KEY به درستی تنظیم شده است.";
+  }
+  
   try {
     const geminiModel = ai.models;
     const systemInstruction = modelPersonas[model];

@@ -28,26 +28,26 @@ export const Header: React.FC<HeaderProps> = ({ currentModel, onModelChange }) =
   }, []);
 
   return (
-    <header className="bg-gray-800/80 backdrop-blur-sm border-b border-sky-500/30 p-4 flex justify-between items-center flex-shrink-0 z-10">
-      <h1 className="text-xl font-bold text-white">چت‌بات هوشمند</h1>
+    <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200/80 p-4 flex justify-between items-center flex-shrink-0 z-10">
+      <h1 className="text-xl font-bold text-gray-900">چت‌بات هوشمند</h1>
       <div className="relative" ref={dropdownRef}>
         <button 
           onClick={() => setIsOpen(!isOpen)} 
-          className="flex items-center gap-2 rtl:gap-2 bg-gray-700/50 border border-transparent text-gray-200 px-4 py-2 rounded-lg transition-all hover:bg-gray-700 hover:border-sky-500/50"
+          className="flex items-center gap-2 rtl:gap-2 bg-gray-100 border border-transparent text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-200 hover:border-sky-500/50"
         >
           <span>{currentModel}</span>
           <i className={`fas fa-chevron-down transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
         </button>
         {isOpen && (
-          <div className="absolute left-0 rtl:left-auto rtl:right-0 mt-2 w-56 bg-gray-800 border border-gray-700 rounded-lg shadow-lg animate-fade-in-up origin-top-left rtl:origin-top-right">
+          <div className="absolute left-0 rtl:left-auto rtl:right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg animate-fade-in-up origin-top-left rtl:origin-top-right">
             <div className="p-2">
               {modelOptions.map(option => (
                 <button 
                   key={option.id} 
                   onClick={() => { onModelChange(option.id); setIsOpen(false); }} 
-                  className="w-full flex items-center gap-3 rtl:gap-3 p-3 rounded-md text-right rtl:text-right text-gray-200 hover:bg-sky-500/20 transition-colors"
+                  className="w-full flex items-center gap-3 rtl:gap-3 p-3 rounded-md text-right rtl:text-right text-gray-700 hover:bg-sky-500/10 transition-colors"
                 >
-                  <i className={`${option.icon} w-6 text-lg text-center text-sky-400`}></i>
+                  <i className={`${option.icon} w-6 text-lg text-center text-sky-500`}></i>
                   <span className="font-semibold">{option.id}</span>
                 </button>
               ))}

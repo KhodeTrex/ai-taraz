@@ -12,7 +12,7 @@ const UserIcon: React.FC = () => (
 );
 
 const ModelIcon: React.FC = () => (
-    <div className="w-10 h-10 bg-gray-700 flex items-center justify-center text-sky-400 rounded-full flex-shrink-0 shadow-md">
+    <div className="w-10 h-10 bg-gray-200 flex items-center justify-center text-sky-500 rounded-full flex-shrink-0 shadow-md">
         <i className="fa-solid fa-robot"></i>
     </div>
 );
@@ -32,7 +32,7 @@ export const MessageBubble: React.FC<MessageBubbleProps> = ({ message }) => {
         className={`max-w-xl p-4 rounded-2xl shadow-lg ${
           isUser
             ? 'bg-sky-500 rounded-br-none text-white'
-            : 'bg-gray-800 rounded-bl-none text-gray-200'
+            : 'bg-white rounded-bl-none text-gray-800 border border-gray-200'
         }`}
       >
         <p className="whitespace-pre-wrap leading-relaxed">{message.text}</p>

@@ -52,13 +52,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full text-gray-100 font-[Vazirmatn,sans-serif]">
+    <div className="flex flex-col h-screen w-full text-gray-800 font-[Vazirmatn,sans-serif]">
       <Header currentModel={currentModel} onModelChange={handleModelChange} />
       <main className="flex-1 flex flex-col overflow-hidden">
         <ChatWindow messages={messages} isLoading={isLoading} model={currentModel} />
       </main>
-      <div className="bg-gray-900">
-          {error && <p className="text-red-400 text-center mb-2 text-sm px-4">{error}</p>}
+      <div className="bg-gray-100 border-t border-gray-200">
+          {error && <p className="text-red-500 text-center mb-2 text-sm px-4">{error}</p>}
         <ChatInput onSend={handleSendMessage} isLoading={isLoading} />
       </div>
     </div>
